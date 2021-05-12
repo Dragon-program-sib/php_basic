@@ -1,0 +1,9 @@
+{
+    "[html]": {
+
+        "editor.suggest.insertMode": "replace"
+    },
+    "auto-close-tag.disableOnLanguage": [
+    
+    ]
+}
