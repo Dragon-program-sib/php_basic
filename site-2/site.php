@@ -4,4 +4,3 @@ $h1 = "Информация обо мне";
 $year = date("Y");
 
 include "main.php";
-?>
