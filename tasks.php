@@ -97,7 +97,7 @@ function fold($a, $b)
 }
 
 echo fold(6, 2);
-echo "<br>";
+echo "\n(Сложение)<br>";
 
 function deduct($a, $b)
 {
@@ -105,7 +105,7 @@ function deduct($a, $b)
 }
 
 echo deduct(6, 2);
-echo "<br>";
+echo "\n(Вычитание)<br>";
 
 function multiply($a, $b)
 {
@@ -113,7 +113,7 @@ function multiply($a, $b)
 }
 
 echo multiply(6, 2);
-echo "<br>";
+echo "\n(Умножение)<br>";
 
 function divide($a, $b)
 {
@@ -125,8 +125,35 @@ function divide($a, $b)
 }
 
 echo divide(6, 2);
-echo "<br><br><br>";
+echo "\n(Деление)<br><br><br>";
 
 /* 4. Реализовать функцию с тремя параметрами: function mathOperation($arg1, $arg2, $operation), где $arg1, $arg2 – значения аргументов, $operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение (использовать switch). */
 
+echo "4 задание:<br>";
+function calculate($arg1, $arg2, $operation)
+{
+    switch ($operation) {
+        case "+":
+            $res = fold($arg1, $arg2);
+            echo "Сумма чисел ($arg1 и $arg2):\n";
+            break;
+        case "-":
+            $res = deduct($arg1, $arg2);
+            echo "Разность чисел ($arg1 и $arg2):\n";
+            break;
+        case "*":
+            $res = multiply($arg1, $arg2);
+            echo "Произведение чисел ($arg1 и $arg2):\n";
+            break;
+        case "/":
+            $res = divide($arg1, $arg2);
+            echo "Частное чисел ($arg1 и $arg2):\n";
+            break;
+        default:
+            echo "Одно из указанных значений, не соответствовало требуемому формату.";
+            break;
+    }
+    echo $res;
+}
 
+calculate(4, 2, "+");
