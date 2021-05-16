@@ -166,15 +166,45 @@ function raiseToDegree($val, $pow)
 {
     if ($pow == 1) {
         return $val;
+    } elseif ($pow < 0) {
+        return raiseToDegree(1 / $val, -$pow); // Возведение числа в отрицательную степень.
     } else {
         return $val * raiseToDegree($val, $pow - 1);
     }
 }
 
-echo raiseToDegree(5, 3);
+echo raiseToDegree(5, -3);
 
 
 /* 7. *Написать функцию, которая вычисляет текущее время и возвращает его в формате с правильными склонениями, например:
 
 22 часа 15 минут
 21 час 43 минуты */
+
+echo "<br><br><br>7 задание:<br>";
+function showDate($hours, $minutes)
+{
+    if (($hours == 0 || $hours >= 5 && $hours <= 20) && ($minutes == 0 || $minutes >= 5 && $minutes <= 20 || $minutes >= 25 && $minutes <= 30 || $minutes >= 35 && $minutes <= 40 || $minutes >= 45 && $minutes <= 50 || $minutes >= 55 && $minutes <= 59)) {
+        echo "$hours часов $minutes минут";
+    } elseif (($hours == 0 || $hours >= 5 && $hours <= 20) && ($minutes == 1 || $minutes == 21 || $minutes == 31 || $minutes == 41 || $minutes == 51)) {
+        echo "$hours часов $minutes минута";
+    } elseif (($hours == 0 || $hours >= 5 && $hours <= 20) && ($minutes >= 2 && $minutes <= 4 || $minutes >= 22 && $minutes <= 24 || $minutes >= 32 && $minutes <= 34 || $minutes >= 42 && $minutes <= 44 || $minutes >= 52 && $minutes <= 54)) {
+        echo "$hours часов $minutes минуты";
+    } elseif (($hours == 1 || $hours == 21) && ($minutes == 1 || $minutes == 21 || $minutes == 31 || $minutes == 41 || $minutes == 51)) {
+        echo "$hours час $minutes минута";
+    } elseif (($hours == 1 || $hours == 21) && ($minutes == 0 || $minutes >= 5 && $minutes <= 20 || $minutes >= 25 && $minutes <= 30 || $minutes >= 35 && $minutes <= 40 || $minutes >= 45 && $minutes <= 50 || $minutes >= 55 && $minutes <= 59)) {
+        echo "$hours час $minutes минут";
+    } elseif (($hours == 1 || $hours == 21) && ($minutes >= 2 && $minutes <= 4 || $minutes >= 22 && $minutes <= 24 || $minutes >= 32 && $minutes <= 34 || $minutes >= 42 && $minutes <= 44 || $minutes >= 52 && $minutes <= 54)) {
+        echo "$hours час $minutes минуты";
+    } elseif (($hours >= 2 && $hours <= 4 || $hours >= 22 && $hours <= 24) && ($minutes >= 2 && $minutes <= 4 || $minutes >= 22 && $minutes <= 24 || $minutes >= 32 && $minutes <= 34 || $minutes >= 42 && $minutes <= 44 || $minutes >= 52 && $minutes <= 54)) {
+        echo "$hours часа $minutes минуты";
+    } elseif (($hours >= 2 && $hours <= 4 || $hours >= 22 && $hours <= 24) && ($minutes == 0 || $minutes >= 5 && $minutes <= 20 || $minutes >= 25 && $minutes <= 30 || $minutes >= 35 && $minutes <= 40 || $minutes >= 45 && $minutes <= 50 || $minutes >= 55 && $minutes <= 59)) {
+        echo "$hours часа $minutes минут";
+    } elseif (($hours >= 2 && $hours <= 4 || $hours >= 22 && $hours <= 24) && ($minutes == 1 || $minutes == 21 || $minutes == 31 || $minutes == 41 || $minutes == 51)) {
+        echo "$hours часа $minutes минута";
+    }
+}
+
+$hours = rand(0, 24);
+$minutes = rand(0, 59);
+echo showDate($hours, $minutes);
