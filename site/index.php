@@ -9,6 +9,8 @@ function renderTemplate($page, $content = '')
     return ob_get_clean();
 }
 
-$about = renderTemplate('about');
+$menu = renderTemplate('menu');
+$main = renderTemplate('main');
 
-echo renderTemplate('layouts/layout', $about);
+echo renderTemplate('layouts/layout', $menu);
+echo renderTemplate('layouts/layout', $main);
