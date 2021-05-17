@@ -8,27 +8,43 @@
 
 Ноль можно считать положительным числом. */
 
+// 1 вариант.
+
 echo "1 задание:<br>";
 $a = 3;
 $b = 2;
 
 if ($a >= 0 && $b >= 0) {
-    echo $a - $b;
-    echo "<br><br><br>";
+    echo ($a - $b);
+    echo "<br><br>";
 } elseif ($a < 0 && $b < 0) {
-    echo $a * $b;
-    echo "<br><br><br>";
+    echo ($a * $b);
+    echo "<br><br>";
 } else {
-    echo $a + $b;
-    echo "<br><br><br>";
+    echo ($a + $b);
+    echo "<br><br>";
 }
 
+// 2 вариант.
+
+echo "1 задание (другая реализация):<br>";
+function performOperation($a, $b)
+{
+    if ($a >= 0 && $b >= 0) {
+        return ($a - $b);
+    } elseif ($a < 0 && $b < 0) {
+        return ($a * $b);
+    }
+    return ($a + $b);
+}
+
+echo (performOperation(5, 2));
 
 /* 2. Присвоить переменной $а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от $a до 15. При желании сделайте это задание через рекурсию. */
 
 // 1 вариант.
 
-echo "2 задание:<br>";
+echo "<br><br><br>2 задание:<br>";
 $a = rand(0, 16); // Умышленно проставлено максимальное число "16" (а не 15), чтобы продемонстрировать работу кейса "default".
 echo "$a<br>";
 
@@ -70,12 +86,57 @@ switch ($a) {
         echo "Ошибка: число больше 15 или меньше нуля! Допустимый диапазон чисел - от 0 до 15.<br><br>";
 }
 
+// 1а вариант.
+
+echo "2 задание (другая форма вывода):<br>";
+$a = rand(0, 16); // Умышленно проставлено максимальное число "16" (а не 15), чтобы продемонстрировать работу кейса "default".
+echo "$a<br>";
+
+switch ($a) {
+    case 0:
+        echo $a++;
+    case 1:
+        echo $a++;
+    case 2:
+        echo $a++;
+    case 3:
+        echo $a++;
+    case 4:
+        echo $a++;
+    case 5:
+        echo $a++;
+    case 6:
+        echo $a++;
+    case 7:
+        echo $a++;
+    case 8:
+        echo $a++;
+    case 9:
+        echo $a++;
+    case 10:
+        echo $a++;
+    case 11:
+        echo $a++;
+    case 12:
+        echo $a++;
+    case 13:
+        echo $a++;
+    case 14:
+        echo $a++;
+    case 15:
+        echo "15<br><br>";
+        break;
+    default:
+        echo "Ошибка: число больше 15 или меньше нуля! Допустимый диапазон чисел - от 0 до 15.<br><br>";
+}
+
 // 2 вариант (через рекурсию).
 
+echo "2 задание (через рекурсию):<br>";
 function printNumbers($a)
 {
-    if ($a <= 15 || $a = 0) {
-        echo "$a\n";
+    if ($a <= 15) {
+        echo "{$a}\n";
         $a++;
         printNumbers($a);
     }
@@ -95,33 +156,33 @@ function fold($a, $b)
     return $a + $b;
 }
 
-echo fold(6, 2);
-echo "\n(Сложение)<br>";
-
 function deduct($a, $b)
 {
     return $a - $b;
 }
-
-echo deduct(6, 2);
-echo "\n(Вычитание)<br>";
 
 function multiply($a, $b)
 {
     return $a * $b;
 }
 
-echo multiply(6, 2);
-echo "\n(Умножение)<br>";
-
 function divide($a, $b)
 {
     if ($b == 0) {
-        echo "На ноль делить нельзя!\n";
+        return "На ноль делить нельзя!";
     } else {
         return $a / $b;
     }
 }
+
+echo fold(6, 2);
+echo "\n(Сложение)<br>";
+
+echo deduct(6, 2);
+echo "\n(Вычитание)<br>";
+
+echo multiply(6, 2);
+echo "\n(Умножение)<br>";
 
 echo divide(6, 2);
 echo "\n(Деление)";
@@ -134,29 +195,23 @@ function calculate($arg1, $arg2, $operation)
 {
     switch ($operation) {
         case "+":
-            $res = fold($arg1, $arg2);
             echo "Сумма чисел ($arg1 и $arg2):\n";
-            break;
+            return fold($arg1, $arg2);
         case "-":
-            $res = deduct($arg1, $arg2);
             echo "Разность чисел ($arg1 и $arg2):\n";
-            break;
+            return deduct($arg1, $arg2);
         case "*":
-            $res = multiply($arg1, $arg2);
             echo "Произведение чисел ($arg1 и $arg2):\n";
-            break;
+            return multiply($arg1, $arg2);
         case "/":
-            $res = divide($arg1, $arg2);
             echo "Частное чисел ($arg1 и $arg2):\n";
-            break;
+            return divide($arg1, $arg2);
         default:
-            echo "Одно из указанных значений, не соответствовало требуемому формату.";
-            break;
+            return "Одно из указанных значений, не соответствовало требуемому формату.";
     }
-    echo $res;
 }
 
-calculate(4, 3, "+");
+echo (calculate(4, 3, "+"));
 
 
 /* 6. *С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power($val, $pow), где $val – заданное число, $pow – степень. */
@@ -173,7 +228,7 @@ function raiseToDegree($val, $pow)
     }
 }
 
-echo raiseToDegree(5, -3);
+echo raiseToDegree(5, 0);
 
 
 /* 7. *Написать функцию, которая вычисляет текущее время и возвращает его в формате с правильными склонениями, например:
@@ -182,6 +237,19 @@ echo raiseToDegree(5, -3);
 21 час 43 минуты */
 
 echo "<br><br><br>7 задание:<br>";
+
+// 1 способ.
+
+/* 
+0, 5 - 20 (часов)
+2 - 4, 22 - 24 (часа)
+1, 21 (час)
+
+0, 5 - 20, 25 - 30, 35 - 40, 45 - 50, 55 - 59 (минут)
+1, 21, 31, 41, 51 (минута)
+2 - 4, 22 - 24, 32 - 34, 42 - 44, 52 - 54 (минуты)
+ */
+
 function showDate($hours, $minutes)
 {
     if (($hours == 0 || $hours >= 5 && $hours <= 20) && ($minutes == 0 || $minutes >= 5 && $minutes <= 20 || $minutes >= 25 && $minutes <= 30 || $minutes >= 35 && $minutes <= 40 || $minutes >= 45 && $minutes <= 50 || $minutes >= 55 && $minutes <= 59)) {
@@ -208,3 +276,29 @@ function showDate($hours, $minutes)
 $hours = rand(0, 24);
 $minutes = rand(0, 59);
 echo showDate($hours, $minutes);
+
+// 2 способ.
+
+echo "<br><br><br>7 задание (другая реализация):<br>";
+
+function showTime($hours, $minutes)
+{
+    if ($hours % 100 == 0 || ($hours % 100 >= 5 && $hours % 100 <= 20)) {
+        $res = $hours . ' часов ';
+    } elseif ($hours % 10 == 1) {
+        $res = $hours . ' час ';
+    } else {
+        $res = $hours . ' часа ';
+    }
+
+    if ($minutes % 10 == 0 || ($minutes % 10 >= 5 && $minutes % 10 <= 9) || ($minutes % 100 >= 11 && $minutes % 100 <= 14)) {
+        $res .= $minutes . ' минут';
+    } elseif ($minutes % 10 == 1) {
+        $res .= $minutes . ' минута';
+    } else {
+        $res .= $minutes . ' минуты';
+    }
+    return $res;
+}
+
+echo (showTime(date('G'), date('i')));
