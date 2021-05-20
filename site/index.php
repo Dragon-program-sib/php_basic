@@ -40,7 +40,7 @@ function getCatalog()
         [
             'name' => 'Яблоко',
             'price' => 12
-        ],
+        ]
     ];
 }
 
