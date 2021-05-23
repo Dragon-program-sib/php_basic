@@ -44,8 +44,6 @@ function getCatalog()
     ];
 }
 
-echo render($page, $params);
-
 function render($page, $params = [])
 {
     return renderTemplate(LAYOUTS_DIR . 'main', [
@@ -53,6 +51,8 @@ function render($page, $params = [])
         'content' => renderTemplate($page, $params)
     ]);
 }
+
+echo render($page, $params);
 
 function renderTemplate($page, $params = [])
 {
