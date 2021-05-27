@@ -6,6 +6,8 @@ function getGallery($path)
 
 function loadImage()
 {
+    //var_dump($_FILES);
+    //die("Загружаем изображение.");
     $path_big = IMG_BIG . $_FILES["image"]["name"];
     $path_small = IMG_SMALL . $_FILES["image"]["name"];
 
@@ -34,16 +36,15 @@ function loadImage()
         }
     }
 
-    /* if (move_uploaded_file($_FILES['image']['tmp_name'], $path_big)) {
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $path_big)) {
 
         //Ресайз.
         $image = new SimpleImage();
-        $image-> load($path_big);
+        $image->load($path_big);
         $image->resizeToWidth(150);
         $image->save($path_small);
         header("location: /?page=gallery");
-        echo "Файл успешно загружен.\n";
     } else {
         echo "Ошибка.<br>";
-    } */
+    }
 }
