@@ -10,3 +10,4 @@ include ROOT . "/engine/functions.php";
 include ROOT . "/engine/log.php";
 include ROOT . "/engine/gallery.php";
 include ROOT . "/engine/classSimpleImage.php";
+include ROOT . "/engine/message.php";

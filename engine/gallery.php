@@ -6,45 +6,44 @@ function getGallery($path)
 
 function loadImage()
 {
+    //$page = header("location: /?page=gallery");
     //var_dump($_FILES);
     //die("Загружаем изображение.");
     $path_big = IMG_BIG . $_FILES["image"]["name"];
     $path_small = IMG_SMALL . $_FILES["image"]["name"];
 
-    // Проверки файла.
     // Проверка на тип файла.
-    $imageinfo = getimagesize($_FILES['userfile']['tmp_name']);
-
-    if ($imageinfo['mime'] != 'image/gif' && $imageinfo['mime'] != 'image/jpeg') {
-        echo "Можно загружать только jpg-файлы, неверное содержание файла, не изображение.";
-        exit;
+    $imageInfo = getimagesize($_FILES['image']['tmp_name']);
+    if ($imageInfo['mime'] == 'image/gif' && $imageInfo['mime'] != 'image/jpeg' || $imageInfo['mime'] != 'image/jpeg') {
+        header("Location: /?page=gallery&message=NOT_JPG");
+        die();
     }
 
-    //Проверка на размер файла.
-    if ($_FILES["userfile"]["size"] > 1024 * 1 * 1024) {
-        echo ("Размер файла не больше 5 мб.");
-        exit;
+    // Проверка на размер файла.
+    if ($_FILES["image"]["size"] > 1024 * 1 * 1024) {
+        header("Location: /?page=gallery&message=MORE_THAN");
+        die();
     }
 
     //Проверка расширения файла.
-    $blacklist = array(".php", ".phtml", ".php3", ".php4");
-
+    /* $blacklist = array(".php", ".phtml", ".php3", ".php4", ".exe", ".txt");
     foreach ($blacklist as $item) {
-        if (preg_match("/$item\$/i", $_FILES['userfile']['name'])) {
-            echo "Загрузка php-файлов запрещена!";
-            exit;
+        if (preg_match("/$item\$/i", $_FILES['image']['name'])) {
+            header("Location: /?page=gallery&message=NO_PHP");
+            die();
         }
-    }
+    } */
 
-    if (move_uploaded_file($_FILES["image"]["tmp_name"], $path_big)) {
-
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $path_big)) {
         //Ресайз.
         $image = new SimpleImage();
         $image->load($path_big);
         $image->resizeToWidth(150);
         $image->save($path_small);
-        header("location: /?page=gallery");
+        header("Location: /?page=gallery&message=OK");
+        die();
     } else {
-        echo "Ошибка.<br>";
+        header("Location: /?page=gallery&message=ERROR");
+        die();
     }
 }
