@@ -59,10 +59,19 @@ a:hover img {
     100% {transform: rotate(0deg)};
 }
 
+.menu {
+	display: flex;
+	justify-content: space-around;
+}
+
 .menu a {
 	color: aquamarine;
 }
 
 .menu li {
 	list-style-type: none;
+}
+
+.message {
+	color: deeppink;
 }

@@ -11,14 +11,13 @@ if (isset($_GET['page'])) {
     $page = $_GET['page'];
 }
 
-$params = [
-    'name' => 'Админ'
-];
+$params = [];
 $layout = 'layout';
 
 switch ($page) {
 
     case 'index':
+        $params['name'] = 'Админ';
         break;
 
     case 'catalog':
