@@ -1721,3 +1721,67 @@ Array
 
 
 
+### 02.06.2021 20:30:02
+Array
+(
+    [layout] => main
+)
+
+
+
+### 02.06.2021 20:30:12
+Array
+(
+    [layout] => main
+    [name] => Админ
+)
+
+
+
+### 02.06.2021 20:30:54
+Array
+(
+    [layout] => main
+    [catalog] => Array
+        (
+            [0] => Array
+                (
+                    [name] => Пицца
+                    [price] => 24
+                )
+
+            [1] => Array
+                (
+                    [name] => Чай
+                    [price] => 1
+                )
+
+            [2] => Array
+                (
+                    [name] => Яблоко
+                    [price] => 12
+                )
+
+        )
+
+)
+
+
+
+### 02.06.2021 20:32:13
+Array
+(
+    [layout] => main
+    [name] => Админ
+)
+
+
+
+### 02.06.2021 20:38:59
+Array
+(
+    [layout] => main
+)
+
+
+
