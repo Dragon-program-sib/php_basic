@@ -1,24 +1,24 @@
 <h2>Каталог</h2>
-<?php var_dump($catalog)?>
+
 <div>
     <div>
-        <h2>Пицца</h2>
+        <h3>Пицца</h3>
         <img src="/img/pizza.jpeg" width="150"><br>
-        Цена: 24<br>
+        <p>Цена: 24</p><br>
         <button>Купить</button>
         <hr>
     </div>
     <div>
-        <h2>Чай</h2>
+        <h3>Чай</h3>
         <img src="/img/tea.png" width="150"><br>
-        Цена: 1<br>
+        <p>Цена: 1</p><br>
         <button>Купить</button>
         <hr>
     </div>
     <div>
-        <h2>Яблоко</h2>
+        <h3>Яблоко</h3>
         <img src="/img/apple.jpg" width="150"><br>
-        Цена: 12<br>
+        <p>Цена: 12</p><br>
         <button>Купить</button>
         <hr>
     </div>
