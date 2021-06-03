@@ -11,12 +11,6 @@ function prepareVariables($page)
             $params['name'] = 'Админ';
             break;
 
-        case 'image':
-            $params['layout'] = 'gallery';
-            addLikes($_GET['id']);
-            $params['image'] = getOneImage($_GET['id']);
-            break;
-
         case 'catalog':
             $params['catalog'] = getCatalog();
             break;
@@ -28,6 +22,15 @@ function prepareVariables($page)
             //$layout = 'gallery';
             $params['layout'] = 'gallery';
             $params['gallery'] = getGallery(IMG_BIG);
+            break;
+
+        case 'image':
+            $params['layout'] = 'gallery';
+            if (addLikes($_GET['id'])) {
+                $params['$message'] = "Такого изображения нет в БД!";
+            };
+            addLikes($_GET['id']);
+            $params['image'] = getOneImage($_GET['id']);
             break;
 
         case 'files':

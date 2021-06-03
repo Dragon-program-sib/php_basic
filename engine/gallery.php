@@ -5,14 +5,16 @@ function getGallery($path)
     return getAssocResult("SELECT * FROM `images` ORDER BY likes DESC");
 }
 
-function getOneImage(int $id)
+function getOneImage($id)
 {
+    $id = (int)$id;
     return getAssocResult("SELECT * FROM `images` WHERE id = {$id}")[0];
 }
 
-function addLikes(int $id)
+function addLikes($id)
 {
-    executeSql("UPDATE `images` SET likes = likes + 1 WHERE id = {$id}");
+    $id = (int)$id;
+    return executeQuery("UPDATE `images` SET likes = likes + 1 WHERE id = {$id}");
 }
 
 function loadImage()
@@ -31,7 +33,7 @@ function loadImage()
     }
 
     // Проверка на размер файла.
-    if ($_FILES["image"]["size"] > 1024 * 1 * 1024) {
+    if ($_FILES["image"]["size"] > 1024 * 5 * 1024) {
         header("Location: /gallery&message=MORE_THAN");
         die();
     }
@@ -47,7 +49,7 @@ function loadImage()
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $path_big)) {
         $filename = mysqli_real_escape_string(getDb(), $_FILES['image']['name']);
-        executeSql("INSERT INTO `images` (`filename`) VALUES ('$filename')");
+        executeQuery("INSERT INTO `images` (`filename`) VALUES ('$filename')");
         //Ресайз.
         $image = new SimpleImage();
         $image->load($path_big);
