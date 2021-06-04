@@ -1,6 +1,3 @@
-<!-- <?php
-//include ROOT . "/engine/message.php"; // Только таким способом, добился вывода $message. Хотелось бы, чтобы всё работало без этой вставки.
-?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,11 +27,6 @@
 </head>
 
 <body>
-    <nav>
-        <?= $menu ?>
-    </nav>
-
-    <h2>Галерея</h2>
     <div id="main">
         <div class="post_title">
         </div>

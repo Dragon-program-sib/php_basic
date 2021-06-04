@@ -28,13 +28,13 @@ function loadImage()
     // Проверка на тип файла.
     $imageInfo = getimagesize($_FILES['image']['tmp_name']);
     if ($imageInfo['mime'] == 'image/gif' && $imageInfo['mime'] != 'image/jpeg' || $imageInfo['mime'] != 'image/jpeg') {
-        header("Location: /gallery&message=NOT_JPG");
+        header("Location: /gallery/?message=NOT_JPG");
         die();
     }
 
     // Проверка на размер файла.
     if ($_FILES["image"]["size"] > 1024 * 5 * 1024) {
-        header("Location: /gallery&message=MORE_THAN");
+        header("Location: /gallery/?message=MORE_THAN");
         die();
     }
 
@@ -55,10 +55,10 @@ function loadImage()
         $image->load($path_big);
         $image->resizeToWidth(150);
         $image->save($path_small);
-        header("Location: /gallery&message=OK");
+        header("Location: /gallery/?message=OK");
         die();
     } else {
-        header("Location: /gallery&message=ERROR");
+        header("Location: /gallery/?message=ERROR");
         die();
     }
 }

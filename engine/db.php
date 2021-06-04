@@ -31,6 +31,7 @@ function getAssocResult($sql)
 function getOneResult($sql)
 {
     $result = @mysqli_query(getDb(), $sql) or die(mysqli_error(getDb()));
+
     return $result->fetch_assoc();
 }
 
@@ -38,5 +39,6 @@ function getOneResult($sql)
 function executeQuery($sql)
 {
     $result = @mysqli_query(getDb(), $sql) or die(mysqli_error(getDb()));
+    
     return mysqli_affected_rows(getDb());
 }

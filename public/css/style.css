@@ -15,9 +15,19 @@ a {
 	color: skyblue;
 }
 
+.catalog {
+	display: flex;
+	justify-content: space-around;
+}
+
 .gallery img {
 	margin:5px;
 	border:3px solid #fff;
+}
+
+.big_image {
+	width: 939px;
+	height: 600px;
 }
 
 a.photo:hover img {

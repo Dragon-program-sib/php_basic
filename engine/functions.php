@@ -25,11 +25,11 @@ function prepareVariables($page)
             break;
 
         case 'image':
-            $params['layout'] = 'gallery';
+            $params['layout'] = 'gallery_image';
             if (addLikes($_GET['id'])) {
                 $params['$message'] = "Такого изображения нет в БД!";
             };
-            addLikes($_GET['id']);
+            //addLikes($_GET['id']);
             $params['image'] = getOneImage($_GET['id']);
             break;
 
