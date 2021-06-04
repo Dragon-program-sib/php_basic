@@ -84,7 +84,7 @@ function renderTemplate($page, $params = [])
     if (!is_null($params)) {
         extract($params);
     }
-    
+
     $fileName = TEMPLATES_DIR . $page . ".php";
     if (file_exists($fileName)) {
         include $fileName;

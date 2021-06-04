@@ -1,6 +1,3 @@
-<!-- <?php
-//include ROOT . "/engine/message.php"; // Только таким способом, добился вывода $message. Хотелось бы, чтобы всё работало без этой вставки.
-?> -->
 <!DOCTYPE html>
 <html lang="en">
 

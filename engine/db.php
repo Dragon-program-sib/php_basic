@@ -39,6 +39,6 @@ function getOneResult($sql)
 function executeQuery($sql)
 {
     $result = @mysqli_query(getDb(), $sql) or die(mysqli_error(getDb()));
-    
+
     return mysqli_affected_rows(getDb());
 }
