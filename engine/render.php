@@ -2,7 +2,7 @@
 
 function render($page, $params = [])
 {
-    return renderTemplate(LAYOUTS_DIR . 'main', [
+    return renderTemplate(LAYOUTS_DIR . $params['layout'], [
         'menu' => renderTemplate('menu', $params),
         'content' => renderTemplate($page, $params)
     ]);

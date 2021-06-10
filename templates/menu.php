@@ -29,6 +29,14 @@ $menu = [
         'url' => '/feedback'
     ],
     [
+        'name' => 'Калькулятор №1',
+        'url' => '/calculator-1'
+    ],
+    [
+        'name' => 'Калькулятор №2',
+        'url' => '/calculator-2'
+    ],
+    [
         'name' => 'API Test',
         'url' => '/apicatalog'
     ]

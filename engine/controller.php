@@ -1,13 +1,13 @@
 <?php
 function prepareVariables($page, $action = "")
 {
-    $params = [];
-    //$params['layout'] = 'main';
+    //$params = [];
+    $params['layout'] = 'main';
 
     switch ($page) {
 
         case 'index':
-            //$params['name'] = 'Админ';
+            $params['name'] = 'Админ';
             break;
 
         case 'catalog':
@@ -18,7 +18,6 @@ function prepareVariables($page, $action = "")
             if (isset($_POST['load'])) {
                 loadImage();
             }
-            //$layout = 'gallery';
             $params['layout'] = 'gallery';
             $params['gallery'] = getGallery(IMG_BIG);
             break;
