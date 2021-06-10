@@ -47035,3 +47035,60 @@ Array
 
 
 
+### 10.06.2021 17:39:33
+Array
+(
+    [layout] => main
+    [name] => Админ
+)
+
+
+
+### 10.06.2021 17:39:45
+Array
+(
+    [layout] => main
+    [catalog] => Array
+        (
+            [0] => Array
+                (
+                    [name] => Пицца
+                    [price] => 24
+                )
+
+            [1] => Array
+                (
+                    [name] => Чай
+                    [price] => 1
+                )
+
+            [2] => Array
+                (
+                    [name] => Яблоко
+                    [price] => 12
+                )
+
+        )
+
+)
+
+
+
+### 10.06.2021 17:39:48
+Array
+(
+    [layout] => main
+    [name] => Админ
+)
+
+
+
+### 10.06.2021 17:40:48
+Array
+(
+    [layout] => main
+    [name] => Админ
+)
+
+
+

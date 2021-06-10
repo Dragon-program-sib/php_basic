@@ -23,9 +23,12 @@ include "../engine/log.php";
 */
 
 include ROOT . "/engine/db.php";
-include ROOT . "/engine/functions.php";
-include ROOT . "/engine/log.php";
+include ROOT . "/engine/controller.php";
+include ROOT . "/engine/render.php";
+include ROOT . "/engine/catalog.php";
 include ROOT . "/engine/gallery.php";
 include ROOT . "/engine/classSimpleImage.php";
-include ROOT . "/engine/message.php";
 include ROOT . "/engine/news.php";
+include ROOT . "/engine/feedback.php";
+include ROOT . "/engine/message.php";
+include ROOT . "/engine/log.php";

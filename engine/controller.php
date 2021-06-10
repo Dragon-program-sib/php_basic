@@ -1,14 +1,13 @@
 <?php
-function prepareVariables($page)
+function prepareVariables($page, $action = "")
 {
-    //$params = [];
-    //$layout = 'layout';
-    $params['layout'] = 'main';
+    $params = [];
+    //$params['layout'] = 'main';
 
     switch ($page) {
 
         case 'index':
-            $params['name'] = 'Админ';
+            //$params['name'] = 'Админ';
             break;
 
         case 'catalog':
@@ -51,18 +50,25 @@ function prepareVariables($page)
             $params['news'] = getOneNews($id);
             break;
 
+        case 'feedback':
+            //$message = doFeedbackAction($action);
+            $params['feedback'] = getAllFeedback();
+            //$params['message'] = $message;
+            break;
+
         case 'apicatalog':
             echo json_encode(getCatalog(), JSON_UNESCAPED_UNICODE);
             die();
     }
 
-    _log($params, 'params');
+    //_log($params, 'params');
     return $params;
 }
 
 /* Функция, возвращает текст шаблона $page с подстановкой переменных
 из массива $params, содержимое шабона $page подставляется в
 переменную $content главного шаблона layout для всех страниц. */
+/*
 function render($page, $params)
 {
     return renderTemplate(LAYOUTS_DIR . $params['layout'], [
@@ -73,12 +79,6 @@ function render($page, $params)
 
 function renderTemplate($page, $params = [])
 {
-
-    //$params = ['menu' => 'код меню', 'catalog' => ['чай'], 'content' => 'Код подшаблона']
-    //extract($params);
-    /* foreach ($params as $key => $value) {
-        $$key = $value;
-    } */
     ob_start();
 
     if (!is_null($params)) {
@@ -117,3 +117,4 @@ function getFiles()
 {
     return array_splice(scandir(DOCS_DIR), 2);
 }
+*/

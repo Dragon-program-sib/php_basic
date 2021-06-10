@@ -6,32 +6,30 @@ $menu = [
     ],
     [
         'name' => 'О нас',
-        //'url' => '/?page=about'
         'url' => '/about'
     ],
     [
         'name' => 'Каталог',
-        //'url' => '/?page=catalog'
         'url' => '/catalog'
     ],
     [
         'name' => 'Галерея',
-        //'url' => '/?page=gallery'
         'url' => '/gallery'
     ],
     [
         'name' => 'Файлы',
-        //'url' => '/?page=files'
         'url' => '/files'
     ],
     [
         'name' => 'Новости',
-        //'url' => '/?page=news'
         'url' => '/news'
     ],
     [
+        'name' => 'Отзывы',
+        'url' => '/feedback'
+    ],
+    [
         'name' => 'API Test',
-        //'url' => '/?page=apicatalog'
         'url' => '/apicatalog'
     ]
 
