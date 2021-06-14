@@ -29,6 +29,7 @@ include ROOT . "/engine/catalog.php";
 include ROOT . "/engine/gallery.php";
 include ROOT . "/engine/classSimpleImage.php";
 include ROOT . "/engine/news.php";
-include ROOT . "/engine/feedback.php";
 include ROOT . "/engine/message.php";
 include ROOT . "/engine/log.php";
+include ROOT . "/model/feedback.php";
+include ROOT . "/model/calcOperations.php";

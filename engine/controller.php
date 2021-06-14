@@ -50,9 +50,22 @@ function prepareVariables($page, $action = "")
             break;
 
         case 'feedback':
-            //$message = doFeedbackAction($action);
+            //if ($action == 'create') {
+
+            //}
+            //$message = addFeedBack();
+            //header('feedback?message');
+            $message = doFeedBackAction($action);
+            $params['message'] = $message['message'];
             $params['feedback'] = getAllFeedback();
-            //$params['message'] = $message;
+            break;
+
+        case 'calculator-1':
+            //$params['calculator-1'] = calcOperations();
+            break;
+
+        case 'calculator-2':
+
             break;
 
         case 'apicatalog':

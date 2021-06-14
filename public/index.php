@@ -28,5 +28,4 @@ if ($url_array[1] == "") {
 }
 
 $params = prepareVariables($page, $action);
-
 echo render($page, $params);

@@ -39,7 +39,7 @@ $menu = [
     [
         'name' => 'API Test',
         'url' => '/apicatalog'
-    ]
+    ],
 
 ];
 
