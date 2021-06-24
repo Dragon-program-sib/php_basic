@@ -6,39 +6,39 @@ $menu = [
     ],
     [
         'name' => 'О нас',
-        'url' => '/about'
+        'url' => '/about/'
     ],
     [
         'name' => 'Каталог',
-        'url' => '/catalog'
+        'url' => '/catalog/'
     ],
     [
         'name' => 'Галерея',
-        'url' => '/gallery'
+        'url' => '/gallery/'
     ],
     [
         'name' => 'Файлы',
-        'url' => '/files'
+        'url' => '/files/'
     ],
     [
         'name' => 'Новости',
-        'url' => '/news'
+        'url' => '/news/'
     ],
     [
         'name' => 'Отзывы',
-        'url' => '/feedback'
+        'url' => '/feedback/'
     ],
     [
         'name' => 'Калькулятор №1',
-        'url' => '/calculator-1'
+        'url' => '/calculator-1/'
     ],
     [
         'name' => 'Калькулятор №2',
-        'url' => '/calculator-2'
+        'url' => '/calculator-2/'
     ],
     [
         'name' => 'API Test',
-        'url' => '/apicatalog'
+        'url' => '/apicatalog/'
     ],
 
 ];

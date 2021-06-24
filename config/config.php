@@ -31,5 +31,5 @@ include ROOT . "/engine/classSimpleImage.php";
 include ROOT . "/engine/news.php";
 include ROOT . "/engine/message.php";
 include ROOT . "/engine/log.php";
-include ROOT . "/model/feedback.php";
-include ROOT . "/model/calcOperations.php";
+include ROOT . "/models/feedback.php";
+include ROOT . "/models/calcOperations.php";

@@ -1,21 +1,25 @@
 <h2>Отзывы</h2>
 
-<?= $message[$_GET['message']] ?>
-
 <!-- <form action="?action=<?= $action ?>" method="POST"> -->
-<form action="/feedback/create" method="POST">
+<form class="form" action="/feedback/<?= $action ?>/" method="post">
     <p>Будем рады, Вашему отзыву:</p><br>
-    <input hidden type="text" name="id" value="<?= $row['id'] ?>"><br> <!-- Скрытое поле, куда приходит id отзыва. -->
-    <input type="text" name="name" placeholder="Ваше имя" value="<?= $row['name'] ?>"><br>
-    <input type="text" name="feedback" placeholder="Ваш отзыв" value="<?= $row['feedback'] ?>"><br>
-    <input type="submit" name="ok" value="<?= $buttonText ?>"">
+    <div class="message">
+        <?= $message ?>
+    </div>
+    <!-- Скрытое поле, куда приходит id отзыва. -->
+    <input hidden type="text" name="id_feedback" value="<?= $id_feed ?>"><br>
+    <input required class="form__input" type="text" name="name" placeholder="Ваше имя" value="<?= $name ?>"><br>
+    <textarea required class="form__textarea" type="text" cols="20" name="feedback" placeholder="Ваш отзыв" value="<?= $text ?>"></textarea><br>
+    <!-- <input class="form__input" type="text" name="feedback" placeholder="Ваш отзыв" value="<?= $text ?>"><br> -->
+    <input class="form__button" type="submit" value="<?= $buttonText ?>">
+    <input class="form__button" type="reset" value="Отменить">
 </form><br>
 
 <? foreach ($feedback as $value) : ?>
     <div>
         <strong><?= $value['name'] ?></strong>: <?= $value['feedback'] ?>
-        <a href="/feedback/edit&id=<?= $value['id'] ?>">[редактировать]</a>
-        <a href="/feedback/delete&id=<?= $value['id'] ?>">[удалить]</a>
+        <a href="/feedback/edit/?id_feed=<?= $value['id'] ?>">[редактировать]</a>
+        <a href="/feedback/delete/?id_feed=<?= $value['id'] ?>">[удалить]</a>
     </div>
     <hr>
 <? endforeach; ?>

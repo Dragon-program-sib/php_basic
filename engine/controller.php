@@ -50,13 +50,8 @@ function prepareVariables($page, $action = "")
             break;
 
         case 'feedback':
-            //if ($action == 'create') {
-
-            //}
-            //$message = addFeedBack();
-            //header('feedback?message');
-            $message = doFeedBackAction($action);
-            $params['message'] = $message['message'];
+            doFeedBackAction($params, $action);
+            //$params['message'] = $message;
             $params['feedback'] = getAllFeedback();
             break;
 
